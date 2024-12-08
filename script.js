@@ -1,10 +1,15 @@
 document.getElementById('queryForm').addEventListener('submit', async function (e) {
     e.preventDefault();
 
-    const query = document.getElementById('queryInput').value;
+    const query = document.getElementById('queryInput').value.trim();
     const responseContainer = document.getElementById('responseContainer');
 
-    responseContainer.textContent = 'Loading...';
+    if (!query) {
+        responseContainer.innerHTML = '<p style="color: red;">Please enter a question.</p>';
+        return;
+    }
+
+    responseContainer.innerHTML = '<p>Loading...</p>';
 
     try {
         const response = await fetch('https://8002-01jem2v2z9xvn6335vrna2an1e.cloudspaces.litng.ai/predict', {

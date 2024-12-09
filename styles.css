@@ -19,9 +19,9 @@ body {
     max-width: 500px;
 }
 
-h1 {
-    font-weight: 500;
-    color: #333;
+.logo {
+    max-width: 100%;
+    height: auto;
     margin-bottom: 20px;
 }
 
